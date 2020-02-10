@@ -4,6 +4,7 @@ import Item from './Todo';
 
 const ToDoList = props => {
     console.log('This is props', props);
+    // const sortedList = props.thingsToDo.sort((a, b) => a.completed - b.completed);
     return (
         <div className="todo-list">
             {props.thingsToDo.map(item => (
