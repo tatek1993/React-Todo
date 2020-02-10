@@ -7,13 +7,16 @@ class ToDoForm extends React.Component {
             newItem: ''
         };
     }
+
     handleChanges = e => {
         this.setState({
             newItem: e.target.value
         })
+        
         console.log("this is the new item", this.newItem);
         return this.setState({})
     };
+
     handleSubmit = e => {
         e.preventDefault();
         this.props.addNewItem(this.state.newItem);

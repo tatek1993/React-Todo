@@ -62,7 +62,7 @@ class App extends React.Component {
       completed: false
     }
     this.setState({
-      thingsToDo: [...this.state.todoList, newItem]
+      todoList: [...this.state.todoList, newItem]
     })
   }
   // design `App` to be the parent component of your application.
