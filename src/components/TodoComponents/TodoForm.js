@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ToDoList extends React.Component {
+class ToDoForm extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -11,7 +11,7 @@ class ToDoList extends React.Component {
         this.setState({
             newItem: e.target.value
         })
-        console.log(this.newItem);
+        console.log("this is the new item", this.newItem);
         return this.setState({})
     };
     handleSubmit = e => {
@@ -34,3 +34,5 @@ class ToDoList extends React.Component {
         );
     }
 }
+
+export default ToDoForm;

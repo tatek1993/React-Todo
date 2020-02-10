@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import './components/TodoComponents/Todo.css';
 
 import ToDoList from './components/TodoComponents/TodoList';
 import ToDoForm from './components/TodoComponents/TodoForm';
+
+
 const thingsToDo = [
   {
     name: 'Walk the dog',
@@ -33,11 +36,11 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      thingsToDo: todoList 
+     todoList : thingsToDo, 
     }
   }
   toggleItem = (clickedId) => {
-    const newToDoList = this.state.thingsToDo.map((item) => {
+    const newToDoList = this.state.todoList.map((item) => {
       if (item.id === clickedId) {
         return {
           ...item,
@@ -48,7 +51,7 @@ class App extends React.Component {
       }
     });
     this.setState({
-      thingsToDo: newToDoList
+      todoList: newToDoList
     });
   };
 
@@ -59,7 +62,7 @@ class App extends React.Component {
       completed: false
     }
     this.setState({
-      thingsToDo: [...this.state.thingsToDo, newItem]
+      thingsToDo: [...this.state.todoList, newItem]
     })
   }
   // design `App` to be the parent component of your application.
@@ -71,7 +74,7 @@ class App extends React.Component {
           <h2>Welcome to your Todo App!</h2>
           <ToDoForm addNewItem={this.addNewItem}/> 
         </div>
-        
+        <ToDoList thingsToDo={this.state.todoList} toggleItem={this.toggleItem} />
       </div>
     );
   }
